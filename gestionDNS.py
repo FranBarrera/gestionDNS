@@ -7,16 +7,16 @@ dns = open('/root/pruebapy/dns', 'a')
 modo = sys.argv[1]
 
 if modo == '-a':
-		tipo = sys.argv[2]
-		nombre = sys.argv[3]
-		alias = sys.argv[4]
+	tipo = sys.argv[2]
+	nombre = sys.argv[3]
+	alias = sys.argv[4]
 
-		if tipo == '-dir':
-		        dns.write(nombre+'      A       '+alias+'\n')
+	if tipo == '-dir':
+	        dns.write(nombre+'      A       '+alias+'\n')
 
-		elif tipo == '-alias':
-		        dns.write(nombre+'      CNAME   '+alias+'\n')
-		dns.close()
+	elif tipo == '-alias':
+		dns.write(nombre+'      CNAME   '+alias+'\n')
+	dns.close()
 
 if modo == '-b':
 	nombre = sys.argv[2]
@@ -29,8 +29,8 @@ if modo == '-b':
 	dns = open("/root/pruebapy/dns","w")
 
     for linea in lineas:
-		if linea != nombre+"\n":
-			dns.write(linea)
+	if linea != nombre+"\n":
+		dns.write(linea)
 
 dns.close()
 

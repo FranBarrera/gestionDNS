@@ -2,7 +2,7 @@
 
 import sys
 
-dns = open('/root/pruebapy/dns', 'a')
+dns = open('/home/fran/dns', 'a')
 
 modo = sys.argv[1]
 
@@ -21,16 +21,16 @@ if modo == '-a':
 if modo == '-b':
 	nombre = sys.argv[2]
 
-	dns = open("/root/pruebapy/dns","r")
+	dns = open("/home/fran/dns","r")
 	lineas = dns.readlines()
 
 	dns.close()
 
-	dns = open("/root/pruebapy/dns","w")
+	dns = open("/home/fran/dns","w")
 
-    for linea in lineas:
-	if linea != nombre+"\n":
-		dns.write(linea)
+	for linea in lineas:
+		if linea != nombre+"\n":
+			dns.write(linea)
 
 dns.close()
 
